@@ -1,93 +1,58 @@
-import java.util.Scanner;
 public class Employee {
-    
+
     private String name;
+    private int id;
+    private String department;
+    private double salary;
     private int age;
-    private String gender;
-    private String city;
-    private Double salary;
 
-    private Employee(String name, int age, String gender, String city, Double salary) {
+    public Employee(String name, int id, String department, double salary, int age) {
         this.name = name;
-        this.age = age;
-        this.gender = gender;
-        this.city = city;
+        this.id = id;
+        this.department = department;
         this.salary = salary;
-    }
-
-    public static Employee createEmployee(String name, int age, String gender, String city, Double salary) {
-        return new Employee(name, age, gender, city, salary);
+        this.age = age;
     }
     public String getName() {
         return name;
     }
-
-    public void setName(String name) {
-        this.name = name;
+    public int getId() {
+        return id;
     }
-
+    public String getDepartment() {
+        return department;
+    }
+    public double getSalary() {
+        return salary;
+    }
     public int getAge() {
         return age;
     }
-
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
     public void setAge(int age) {
         this.age = age;
     }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public Double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(Double salary) {
-        this.salary = salary;
-    }
-
     public void displayDetails() {
+        System.out.println("Employee Details:");
         System.out.println("Name: " + name);
-        System.out.println("Age: " + age);
-        System.out.println("Gender: " + gender);
-        System.out.println("City: " + city);
+        System.out.println("ID: " + id);
+        System.out.println("Department: " + department);
         System.out.println("Salary: " + salary);
+        System.out.println("Age: " + age);
+        System.out.println();
     }
-    public static void main(String[] args) {
-        
-        Scanner Gojo = new Scanner(System.in);
 
-        System.out.print("Enter name: ");
-        String name = Gojo.nextLine();
 
-        System.out.print("Enter age: ");
-        int age = Gojo.nextInt();
-
-        System.out.print("Enter gender: ");
-        String gender = Gojo.nextLine();
-
-        System.out.print("Enter city: ");
-        String city = Gojo.nextLine();
-
-        System.out.print("Enter salary: ");
-        Double salary = Gojo.nextDouble();
-
-        Employee employee = Employee.createEmployee(name, age, gender, city, salary);
-        employee.displayDetails();
-
-        Gojo.close();
-    }
 }
 
